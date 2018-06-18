@@ -1,3 +1,4 @@
+#!/bin/sh
 ##########################################################################
 # If not stated otherwise in this file or this component's Licenses.txt
 # file the following copyright and licenses apply:
@@ -16,9 +17,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ##########################################################################
-
-#!/bin/sh
-
 brctl addbr br0
 sleep 2
 ifconfig br0 192.168.101.3 up
