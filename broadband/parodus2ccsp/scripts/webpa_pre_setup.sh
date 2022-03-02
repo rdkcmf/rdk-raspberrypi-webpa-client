@@ -21,3 +21,13 @@ brctl addbr br0
 sleep 2
 ifconfig br0 192.168.101.3 up
 sleep 1
+
+### Added work around fix for dropbear process running ###
+PID_DROPBEAR=`pidof dropbear`
+
+if [ "$PID_DROPBEAR" = "" ]; then
+        echo "dropbear is not running"
+       /etc/utopia/service.d/service_sshd.sh sshd-restart
+else
+        echo "dropbear is running properly"
+fi
